@@ -1,0 +1,7 @@
+---
+
+- name: "Making user"
+  user: name=chung comment="Josh" group=wheel
+
+- name: "Placing key"
+  authorized_key: user=chung key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
